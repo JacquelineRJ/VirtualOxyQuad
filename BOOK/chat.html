@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+body{
+  background-color: black;
+}
+
+/*FLEXTCONTAINERS*/
+.header {
+  padding: 10px;
+  margin-top: -10px;
+  margin-left: 0px; 
+  background-color: black;
+}
+.row {
+  display: -webkit-flex;
+  display: flex;
+}
+
+.column1{
+  padding: 20px;
+  padding-right: 80px;
+  height: 720px; 
+}
+
+.column2{
+  padding: 20px;
+  padding-right: 80px;
+  height: 550px; 
+}
+
+/* 
+.column.left { /* Actually just shorter */
+  padding-left: 150px;
+   -webkit-flex: 1;
+   -ms-flex: 1;
+   flex: 1;
+}
+.column.right { /* Actually just longer */
+  -webkit-flex: 1.5;
+  -ms-flex: 1.5;
+  flex: 1.5;
+} */
+
+div.divider{
+  display: -webkit-flex;
+  display: flex;
+  height: 15px;
+  width: 1200px;
+}
+/*FLEXCONTAINERS*/
+
+
+
+/* ANIMATIONSSSS */
+div.animation1 {
+  position: relative;
+  animation-name: up;
+  animation-duration: 3s;
+  animation-delay: 0s;
+}
+@keyframes up {
+  0%   {right:0px; top:800px;}
+  100% {right:0px; top:0px;}
+}
+
+div.animation2{
+  position: relative;
+  animation-name: slideRight;
+  animation-duration: 7s;
+  animation-delay: 0s;
+  /* want it to happen when sroll down */
+}
+@keyframes slideRight {
+  0%   {right:1200px; top:0px; opacity: 0%;}
+  100% {right:0px; top:0px; opacity: 100%}
+}
+
+div.animation3{
+  position: relative;
+  animation-name: slideLeft;
+  animation-duration: 7s;
+  animation-delay: 0s;
+  /* want it to happen when sroll down */
+}
+@keyframes slideLeft {
+  0%   {right:-1200px; top:0px; opacity: 0%;}
+  100% {right:0px; top:0px; opacity: 100%}
+}
+/* ANIMATIONSSSS */
+
+
+
+
+
+/*Button Design*/
+.button{
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button1 {
+  background-color: black; 
+  color: white; 
+}
+
+.button1:hover {
+  background-color: #ff8533;
+  color: white;
+}
+
+/* FONTS */
+div.a {
+  font-size: 50px;
+  float: left;
+  color: white;
+  font-family: Optima, sans-serif;
+}
+div.oxy{
+  font-size: 200px;
+  float: left;
+  color: white;
+  font-family: Optima, sans-serif;
+  margin-top: -45px;
+  margin-left: 230px;
+}
+
+h1{
+  color: white;
+  float: right;
+  font-size: 65px;
+  margin-top: 0px;
+}
+div.description{
+  color: white;
+  float: right;
+  font-size: 18px;
+  margin-top: 100px;
+}
+h2{
+  color: white;
+  font-size: 35px;
+  text-align: center;
+  margin-top: 400px;
+}
+/* FONTS */
+
+
+
+div.gallery{
+  margin: 5px;
+  float: left;
+  border: 10px solid #000000;
+  width: 600px;
+  height: 423px;
+  margin-top: 105px;
+  margin-left: -350px;
+  background-image: url(https://www.oxy.edu/sites/default/files/styles/banner_image/public/images/hero-banners/hero_campus-bike_1440x800_0.jpg?itok=cD7975k0); background-size: cover; background-position: center;
+}
+
+div.gallery img {
+  float: left;
+  width: 100%;
+  height: auto;
+}
+
+
+</style>
+</head>
+<body>
+
+
+<div class="header">
+  <button id="enter_chat" class="button button1" style="float:right;">Chat</button>
+  <button id="photo_gallery" class="button button1" style="float:right;">Photo Gallery</button>      
+  <button id="special_thanks" class="button button1" >GatherTown</button>
+  
+</div>
+
+<div class="row">
+  <div class="column1 right">
+    <div class="a" style="margin-top:200px; margin-left: 300px">V I R T U A L</div>
+    <div class="oxy">OXY</div>
+    <div class="a" style="margin-top: -45px;margin-left: 340px">Q U A D</div>
+  </div>
+  
+  <div class="animation1">
+    <div class="column1 left" style="background-color: #ff8533">  <!-- COLOR HERE MAYBE??????-->
+      <div class="gallery"></div>
+    </div>
+  </div>
+</div>
+
+<div class="divider">HI</div>
+<!-- CHAT DESCRIPTION -->
+<div class="animation2">
+  <div class=row>
+    <div class="column2 right" style="background-color: rgb(224, 135, 75);">
+      <h1>Chat Room</h1>
+      <div class="description">Lets you talk to other people :)</div>
+      <h2>"INSTERT QUOTE ABT SPONTANEOUS MEETING"</h2>
+    </div>
+    <div class="column2 left" style="background-color: rgb(224, 135, 75)">
+      IMAGGEEE
+    </div>
+  </div>
+</div>
+
+<div class="divider">HEY</div>
+<!-- PHOTO GALLERY DESCRIPTION -->
+<div class="animation3">
+  <div class=row>
+    <div class="column2 left" style="background-color: rgb(230, 204, 189)">
+      IMAGGEEE
+    </div>
+    <div class="column2 right" style="background-color:rgb(230, 204, 189);">
+      <h1 style="float: left;">Photo Gallery</h1>
+      <div class="description" style="float: left;">
+        See quad events and stuff 
+      </div>
+      <h2 >"INSTERT ABOUT QUAD SQUIRRELS? LOL"</h2>
+    </div>
+  </div>
+</div>
+
+<div class="divider">HOWDYY</div>
+<!-- GATHERTOWN DESCRIPTION -->
+<div class="animation2">
+  <div class=row>
+    <div class="column2 right" style="background-color: rgb(224, 135, 75);">
+      <h1>GatherTown </h1>
+      <div class="description">
+        Interact with other students!
+      </div>
+      <h2>"INSTERT QUOTE ABT SPONTANEOUS MEETING"</h2>
+    </div>
+    <div class="column2 left" style="background-color: rgb(224, 135, 75)">
+      IMAGGEEE
+    </div>
+  </div>
+</div>
+
+
+
+      <script type="text/javascript">
+          document.getElementById("enter_chat").onclick = function (e) {
+              e.preventDefault();
+              location.href = "/login";
+          };
+      </script>
+
+      <script type="text/javascript">
+          document.getElementById("photo_gallery").onclick = function (e) {
+              e.preventDefault();
+              location.href = "/photos";
+          };
+      </script>
+
+      <script type="text/javascript">
+          document.getElementById("special_thanks").onclick = function (e) {
+              e.preventDefault();
+              location.href = "/special_thanks";
+          };
+      </script>
+
+<!-- </div> -->
+
+
+
+    
+</body>
+</html>
