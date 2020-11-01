@@ -1,6 +1,9 @@
-var app = require('express')();
+var express = require('express')
+var app = new express();
 var http = require('http').createServer(app);
 var io = require('socket.io')(http);
+
+app.use(express.static(__dirname+'/pictures'));
 
 var all_users = {};
 
@@ -65,6 +68,23 @@ io.on('connection', function(socket){
   	console.log("the msg:", msg);
   });
 
+  // socket.on("check_name", (username) => {
+  //   if (!io.engine.clients.hasOwnProperty(username)) {
+  //     io.engine.clients[socket.id]["user_nickname"] = username;
+  //     //console.log(io.engine.clients[socket.id]);
+  //     socket.emit("check_name_passed");
+  //   } 
+  //   else {
+  //     console.log("oh no username exists already lmao");
+  //     socket.emit("check_name_failed");
+  //   }
+  // });
+
+  // onlyfans
+  socket.on("register_name", (username) => {
+    io.engine.clients[socket.id]["user_nickname"] = username;
+    socket.emit("check_name_passed");
+  });
 
 //pair button
   socket.on("pairplease", (msg) => {
@@ -84,7 +104,7 @@ io.on('connection', function(socket){
         //they're no longer paired
         io.engine.clients[random_id]["isPaired"] = true;
         io.engine.clients[socket.id]["isPaired"] = true;
-        other_socket.emit('youre_paired', {'other_id': socket.id});
+        other_socket.emit('youre_paired', {'other_id': io.engine.clients[socket.id]["user_nickname"]});
 
         // actually pair them up
         let new_room = socket.id + "_" + random_id;   
@@ -138,7 +158,7 @@ io.on('connection', function(socket){
 socket.on('send_chat_message_to_server', (msg) => {
   let room_name = io.engine.clients[socket.id]["roomName"];
   console.log("msg: ", msg, "    room name: ", room_name);
-  io.to(room_name).emit('get_chat_message_from_server', {"message": msg, "user": socket.id});
+  io.to(room_name).emit('get_chat_message_from_server', {"message": msg, "user": io.engine.clients[socket.id]["user_nickname"]});
 });
 
 //Shows that user disconnected

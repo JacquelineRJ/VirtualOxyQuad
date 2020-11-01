@@ -131,6 +131,20 @@
     socket.on('pair', function (msg) {
       alert("you have been paired with " + msg);
     });
+
+    socket.on("check_name_passed", function (msg) {
+      alert("yall name is " + name);
+      name_is_chosen = true;
+      $("#pairmeup").css("display", "block");
+    });
+
+    // input username (check if unique)
+    let name_is_chosen = false;
+    let name = window.prompt("input a username or die bitch");
+    socket.emit("check_name", name);
+
+
+
   </script>
   <body>
 
@@ -162,7 +176,7 @@
       </ul>
     </div> -->
 
-    <button class="button button1" id="pairmeup" style="margin-top: 210px;margin-left: 310px;">Pair Me Up!</button> 
+    <button class="button button1" id="pairmeup" style="margin-top: 210px;margin-left: 310px; display: none;">Pair Me Up!</button> 
      <div id="chatarea" style="display: none;">
 
       <style>
