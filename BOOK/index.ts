@@ -93,7 +93,11 @@ io.on('connection', function(socket){
   		socket.emit('alone');
   	}
   	else{
-  		const ids_without_you = Object.keys(io.engine.clients).filter((id) => id != socket.id && io.engine.clients[id]["isPaired"] == false);
+  		const ids_without_you = Object.keys(io.engine.clients).filter(function (id) {
+          return id != socket.id && // not you
+          io.engine.clients[id]["isPaired"] == false && // not already paired
+          io.engine.clients[id].user_nickname // has chosen a username
+      }); 
   		const random_id = ids_without_you[Math.floor(Math.random() * ids_without_you.length)];
       if (random_id == undefined) {
         socket.emit('alone');
@@ -101,10 +105,10 @@ io.on('connection', function(socket){
       else {
         let other_socket = io.sockets.sockets[random_id];
 
-        //they're no longer paired
+        //they're  paired
         io.engine.clients[random_id]["isPaired"] = true;
         io.engine.clients[socket.id]["isPaired"] = true;
-        other_socket.emit('youre_paired', {'other_id': io.engine.clients[socket.id]["user_nickname"]});
+        // other_socket.emit('youre_paired', {'other_id': io.engine.clients[socket.id]["user_nickname"]});
 
         // actually pair them up
         let new_room = socket.id + "_" + random_id;   
@@ -131,7 +135,7 @@ io.on('connection', function(socket){
 
 
         // notify that they're paired
-    		socket.emit('pair', random_id); 
+    		socket.emit('pair', io.engine.clients[random_id]["user_nickname"]); 
 
       }
 

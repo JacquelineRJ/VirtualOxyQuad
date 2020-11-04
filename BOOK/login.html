@@ -9,7 +9,7 @@
       * { margin: 0; padding: 0; box-sizing: border-box; }
       body { 
         font: 13px Helvetica, Arial; 
-        background: linear-gradient(90deg, #ff8533 60%, #000000 60%);
+        background-color: rgb(255, 227, 196);
       }
 
       /*COLUMNS*/
@@ -45,7 +45,7 @@
   
       /*Button Design*/
      .button{
-       background-color: #000000; 
+       background-color: #fda86e; 
        border: none;
        color: white;
        padding: 15px 32px;
@@ -60,16 +60,16 @@
      }
 
      .button1 {
-       background-color: black; 
+       background-color: #fda86e; 
        color: white; 
      }
 
      .button1:hover {
-       background-color: #ff8533;
+       background-color: #e0752e;
        color: white;
      }
 
-      form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
+      form { background: #fda86e; padding: 3px; position: fixed; bottom: 0; width: 100%; }
       form input { border: 0; padding: 10px; width: 90%; margin-right: 0.5%; }
       form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
 
@@ -110,10 +110,10 @@
     socket.on('alone', function (msg){
       alert("No one is online");
     });
-    socket.on('youre_paired', function (msg){
-      alert("you're now paired with " + msg.other_id);
+    // socket.on('youre_paired', function (msg){
+    //   alert("you're now paired with " + msg.other_id);
 
-    });
+    // });
 
     var in_room_count = 0;    
     socket.on('you_joined_room', function (msg){
@@ -129,7 +129,7 @@
       // console.log("hey you're paired btw");      
     });
     socket.on('pair', function (msg) {
-      alert("you have been paired with " + msg);
+      alert("Say hi to " + msg + "!");
     });
 
     socket.on("check_name_passed", function (msg) {
@@ -140,8 +140,8 @@
 
     // input username (check if unique)
     let name_is_chosen = false;
-    let name = window.prompt("input a username or die bitch");
-    socket.emit("check_name", name);
+    let name = window.prompt("What is your name?");
+    socket.emit("register_name", name);
 
 
 
@@ -168,7 +168,7 @@
 <div class="row">
   <div class="column side"></div>
   
-  <div class="column middle" style="background-color: #000000; height: 545px;">
+  <div class="column middle" style="background-color: #fda86e; height: 545px;">
     <!-- <div>
       Users Online:
       <ul id="online_users">
@@ -176,7 +176,7 @@
       </ul>
     </div> -->
 
-    <button class="button button1" id="pairmeup" style="margin-top: 210px;margin-left: 310px; display: none;">Pair Me Up!</button> 
+    <button class="button button1" id="pairmeup" style="margin-top: 210px;margin-left: 250px; display: none;">Pair Me Up!</button> 
      <div id="chatarea" style="display: none;">
 
       <style>
@@ -190,8 +190,8 @@
       </style>
 
       <style>
-        form { background: black; padding: 1px; position: fixed; bottom: 0; width: 50%; margin-bottom: 96px;}
-        form input { border: 16px solid; border-color: black; padding: 10px; width: 90%; margin-left: -22px; position: bottom;}
+        form { background: #fda86e; padding: 1px; position: fixed; bottom: 0; width: 50%; margin-bottom: 96px;}
+        form input { border: 16px solid; border-color: #fda86e; padding: 10px; width: 90%; margin-left: -22px; position: bottom;}
         form button { width: 9%; background: #ff8533; border: none; padding: 10px; color: white;}
       </style>
 
@@ -205,7 +205,7 @@
     </div>
   </div>
   
-  <div class="column side">HI3</div>
+  <div class="column side" style="color: transparent;">HI3</div>
 </div>
 <!-- STYLIZE ME -->
 
@@ -253,7 +253,8 @@
       });
       socket.on('get_chat_message_from_server', function(msg){
         $('#messages').append($('<li>').text( msg["user"] + ": " + msg["message"] ));
-          elem.scrollTop = elem.scrollHeight;
+          window.scrollTo(0, document.body.scrollHeight);
+
       });
 
 
