@@ -1,0 +1,85 @@
+
+h1 {
+  color: #f18a45;
+  text-align: center;
+  font-family: Optima, sans-serif;
+  font-size: 85px;
+}
+  
+p {
+  color: #f18a45;
+  font-family: Optima, sans-serif;
+  font-size: 30px;
+  text-align: center;
+}
+
+
+/* Boxes */
+.page{
+  display: -webkit-flex;
+  display: flex;
+}
+
+.title{
+  padding: 10px;
+  width: 300px; 
+  height: 100%;
+  margin-top: -10px;
+  background-color: rgb(255, 249, 242);
+  position: fixed;
+}
+
+.row{
+  display: -webkit-flex;
+  display: flex;
+  /* background-color: rgb(255, 227, 196); */
+  background-color: rgb(255, 249, 242);
+  width: 100%;
+}
+.button{
+  padding: 20px;
+  padding-right: 80px; 
+  display: -webkit-flex;
+  display: flex;
+  background-size: cover;
+  height: 300px;
+  width: 400px;
+  background-position: center;
+  border: none;
+  display: inline-block;
+  cursor: zoom-in;
+}
+
+.button:hover{
+  opacity: 0.8;
+}
+
+.button2{
+  border: none;
+  padding: 5px 100px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  margin: 4px 2px;
+  margin-left: 20px;
+  cursor: pointer;
+  color: #f18a45;
+  font-family: Optima, sans-serif;
+
+}
+.button2:hover {
+  /* background-color: #fda86e; */
+  color: #0b767e;
+}
+
+.divider{
+  padding: 10px;
+  padding-right: 80px;
+  height: 2px;
+  /* background-color: rgb(255, 227, 196); */
+  background-color: rgb(255, 249, 242);
+}
+
+
+
