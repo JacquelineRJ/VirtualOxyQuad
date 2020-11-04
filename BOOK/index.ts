@@ -7,6 +7,7 @@ app.use(express.static(__dirname+'/pictures'));
 app.use(express.static(__dirname+'/css'));
 app.use(express.static(__dirname+'/PicPages'));
 
+
 var all_users = {};
 
 
