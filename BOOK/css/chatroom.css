@@ -8,7 +8,6 @@ body {
     padding: 10px;
     margin-top: -15px;
     margin-left: -10px; 
-    /*background-color: white;*/
   }
   .row {
     display: -webkit-flex;
@@ -30,7 +29,7 @@ body {
     -ms-flex: 2;
     flex: 2;
     overflow: scroll;
-    
+    margin-top: 30px;
   }
   /*COLUMNS*/
 
@@ -65,23 +64,24 @@ body {
   form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; } */
 
 
+  #above_chat {font-size: 45px; font-family: Optima, sans-serif; text-align: center; font-weight: bold; font-stretch: expanded; color: #ec884d;}
 
-
-  #chatarea.* { margin: 0; padding-top: 10px; margin-bottom: 0px; box-sizing: border-box;}
+  #chatarea.* { margin: 0; padding-top: 10px; margin-bottom: 0px; box-sizing: border-box; }
   #chatarea.body { list-style-type: none; margin: 0px; padding: 0px; color: rgb(255, 227, 196); background-color: #0b767e; float:right; width: fit-content;font: 13px Helvetica, Arial;}
 
 
   
   #messages { list-style-type: none; margin: 0px; padding: 0px;  float: left; width: 50%; font-size: 18px;}
-  #messages li { color: rgb(255, 242, 227); padding: 5px 10px; background-color: #ec884d; border: 8px solid; border-right: transparent; border-left: transparent; border-color: #ec884d; border-radius: 15px 15px 15px 2px; margin-top: 5px;}
+  #messages li { color: rgb(255, 242, 227); padding: 5px 10px; background-color: #ec884d; border: 8px solid; border-right: transparent; border-left: transparent; border-color: #ec884d; border-radius: 15px 15px 15px 2px; margin-top: 5px; margin-bottom: 2px;}
   /* #messages.mine {list-style-type: none; margin: 0px; padding: 0px; color: rgb(255, 227, 196); background-color: #0b767e; float:right; width: fit-content;} */
-  #messages :not(li) {color: #ff8533; border: 8px solid;border-color: rgb(255, 227, 196); background-color: rgb(255, 227, 196); width: 90%; margin-left: 340px; border-radius: 15px 15px 2px 15px; margin-top: 5px; text-align: left;}
+  #messages :not(li) {color: #ff8533; border: 8px solid;border-color: rgb(255, 227, 196); background-color: rgb(255, 227, 196); width: 90%; margin-left: 340px; border-radius: 15px 15px 2px 15px; margin-top: 5px; text-align: left; margin-bottom: 2px;}
+  #messages :not(li):not(div) {color: #bd6939; font-size: 13; background-color: transparent; border: none;}
 
 
   #mine { list-style-type: none; margin: 0px; padding: 0px; color: rgb(255, 227, 196); background-color: #0b767e; float:right; width: 90%;}
   #mine li { padding: 5px 10px; }
 
 
-  form { background: #fda86e; padding: 1px; position: fixed; bottom: 0; width: 670px; margin-bottom: 50px;}
+  form { background: #fda86e; padding: 1px; position: fixed; bottom: 0; width: 670px; margin-bottom: 56px;}
   form input { border: 16px solid; border-color: #fda86e; padding: 10px; width: 565px; margin-left: -22px; position: bottom;}
   form button { width: 9%; background: #ff8533; border: none; padding: 10px; color: white;}

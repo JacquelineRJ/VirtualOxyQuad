@@ -141,7 +141,9 @@ io.on('connection', function(socket){
 
 
         // notify that they're paired
-    		socket.emit('pair', io.engine.clients[random_id]["user_nickname"]); 
+        other_socket.emit('pair', io.engine.clients[socket.id]["user_nickname"]); 
+        socket.emit('pair', io.engine.clients[random_id]["user_nickname"]);
+        
 
       }
 
@@ -162,19 +164,7 @@ io.on('connection', function(socket){
 });
 
  get_users_and_statuses();
-
-  // socket.on("check_name", (username) => {
-  //   if (!io.engine.clients.hasOwnProperty(username)) {
-  //     io.engine.clients[socket.id]["user_nickname"] = username;
-  //     //console.log(io.engine.clients[socket.id]);
-  //     socket.emit("check_name_passed");
-  //   } 
-  //   else {
-  //     console.log("oh no username exists already lmao");
-  //     socket.emit("check_name_failed");
-  //   }
-  // });
-// get message
+ 
 socket.on('send_chat_message_to_server', (msg) => {
   let room_name = io.engine.clients[socket.id]["roomName"];
   console.log("msg: ", msg, "    socket-id: ", socket.id); 

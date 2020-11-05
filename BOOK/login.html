@@ -47,7 +47,7 @@
       in_room_count++;
         console.log(in_room_count);
       if (in_room_count == 2) {
-        alert("Entering a new room...");
+        alert("You have been paired. Entering a new room...");
         // show chat area
         $("#chatarea").css("display", "block");
         $("#pairmeup").css("display", "none");
@@ -56,11 +56,13 @@
       // console.log("hey you're paired btw");      
     });
     socket.on('pair', function (msg) {
-      alert("Say hi to " + msg + "!");
+      // alert("You have been paired with " + msg + ".");
+      $('#above_chat').append($('<div>').text( "Say hi to " + msg + "!"));
+        // $('#messages').append($('<div>').text("   " + $('#m').val()));
     });
 
     socket.on("check_name_passed", function (msg) {
-      alert("yall name is " + name);
+      // alert("yall name is " + name);
       name_is_chosen = true;
       $("#pairmeup").css("display", "block");
     });
@@ -89,13 +91,13 @@
 
  -->
 
-<div class="header" style="margin-top: 5px">THIS IS HEADER</div>
+<div class="header" id="above_chat" style="margin-top: 5px"></div>
 
 <!-- STYLIZE ME -->
 <div class="row">
-  <div class="column side"></div>
+  <div class="column side" ></div>
   
-  <div class="column middle" style="background-color: #fda86e; height: 545px;">
+  <div class="column middle"style="background-color: #fda86e; height: 545px; width: 400px;">
     <!-- <div>
       Users Online:
       <ul id="online_users">
@@ -174,11 +176,7 @@
         $('#messages').append($('<li>').text( msg["user"] + ": " + msg["message"] ));
           window.scrollTo(0, document.body.scrollHeight);
       });
-      socket.on('get_chat_message_from_server2', function(msg){
-        $('#messages2').append($('<li>').text( msg["user"] + ": " + msg["message"] ));
-          window.scrollTo(0, document.body.scrollHeight);
-      });
-
+ 
 
 
    
