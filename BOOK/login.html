@@ -108,7 +108,6 @@
       </style>
 
       <ul id="messages"></ul>
-      <ul id="mine"></ul>
       <form id="sendmsg" action="">
         <input id="m" autocomplete="off" /><button id=sendBtn>Send</button>
       </form>
@@ -165,7 +164,7 @@
       $('#sendmsg').submit(function(e){
         e.preventDefault(); // prevents page reloading
         socket.emit('send_chat_message_to_server', $('#m').val());
-        $('#mine').append($('<li>').text($('#m').val()));
+        $('#messages').append($('<div>').text("   " + $('#m').val()));
         $('#m').val('');
         return false;
       });

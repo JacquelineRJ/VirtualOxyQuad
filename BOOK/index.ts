@@ -38,6 +38,7 @@ app.get("/special_thanks", (req, res) => {
 
 
 
+
 function get_users_and_statuses() {
   // //Shows all users' ids on webpage
   let client_ids = Object.keys(io.engine.clients); // get ids (strings) of all current connections
@@ -178,6 +179,7 @@ socket.on('send_chat_message_to_server', (msg) => {
   let room_name = io.engine.clients[socket.id]["roomName"];
   console.log("msg: ", msg, "    socket-id: ", socket.id); 
   socket.to(room_name).emit('get_chat_message_from_server', {"message": msg, "user": io.engine.clients[socket.id]["user_nickname"]});
+  
   // io.socket.emit('get_chat_message_from_server2', {"message": msg, "user": io.engine.clients[socket.id]["user_nickname"]});
   // this.emit('get_chat_message_from_server2', {"message": msg, "user": io.engine.clients[socket.id]["user_nickname"]});
   
