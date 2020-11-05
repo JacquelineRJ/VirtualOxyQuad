@@ -36,6 +36,8 @@ app.get("/special_thanks", (req, res) => {
   res.sendFile(__dirname + '/credit.html');
 });
 
+
+
 function get_users_and_statuses() {
   // //Shows all users' ids on webpage
   let client_ids = Object.keys(io.engine.clients); // get ids (strings) of all current connections
@@ -160,12 +162,25 @@ io.on('connection', function(socket){
 
  get_users_and_statuses();
 
-
+  // socket.on("check_name", (username) => {
+  //   if (!io.engine.clients.hasOwnProperty(username)) {
+  //     io.engine.clients[socket.id]["user_nickname"] = username;
+  //     //console.log(io.engine.clients[socket.id]);
+  //     socket.emit("check_name_passed");
+  //   } 
+  //   else {
+  //     console.log("oh no username exists already lmao");
+  //     socket.emit("check_name_failed");
+  //   }
+  // });
 // get message
 socket.on('send_chat_message_to_server', (msg) => {
   let room_name = io.engine.clients[socket.id]["roomName"];
-  console.log("msg: ", msg, "    room name: ", room_name);
-  io.to(room_name).emit('get_chat_message_from_server', {"message": msg, "user": io.engine.clients[socket.id]["user_nickname"]});
+  console.log("msg: ", msg, "    socket-id: ", socket.id); 
+  socket.to(room_name).emit('get_chat_message_from_server', {"message": msg, "user": io.engine.clients[socket.id]["user_nickname"]});
+  // io.socket.emit('get_chat_message_from_server2', {"message": msg, "user": io.engine.clients[socket.id]["user_nickname"]});
+  // this.emit('get_chat_message_from_server2', {"message": msg, "user": io.engine.clients[socket.id]["user_nickname"]});
+  
 });
 
 //Shows that user disconnected
@@ -174,8 +189,10 @@ socket.on('disconnect', () => {
    socket.broadcast.emit('chat message', '***SOMEONE LEFT THE CHAT***');
    let client_ids = Object.keys(io.engine.clients); // get ids (strings) of all current connections
    io.emit('show_all_users', client_ids); // send to all users
+
  });
 });
+
 
 //sends message to chat
 io.of("/login").on('connection', (socket) => {

@@ -1,0 +1,83 @@
+body { 
+    font: 13px Helvetica, Arial; 
+    background-color: rgb(255, 227, 196);
+  }
+
+  /*COLUMNS*/
+  .header {
+    padding: 10px;
+    margin-top: -15px;
+    margin-left: -10px; 
+    /*background-color: white;*/
+  }
+  .row {
+    display: -webkit-flex;
+    display: flex;
+  }
+  .column {
+    padding: 20px;
+    height: 600px;
+    margin-top: 90px;
+
+  }
+  .column.side {
+     -webkit-flex: 1;
+     -ms-flex: 1;
+     flex: 1;
+  }
+  .column.middle {
+    -webkit-flex: 2;
+    -ms-flex: 2;
+    flex: 2;
+    overflow: scroll;
+    
+  }
+  /*COLUMNS*/
+
+  /*Button Design*/
+ .button{
+   background-color: #fda86e; 
+   border: none;
+   color: white;
+   padding: 15px 32px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 24px;
+   margin: 4px 2px;
+   cursor: pointer;
+   font-family:Optima, sans-serif;
+   transition-duration: 0.4s;
+ }
+
+ .button1 {
+   background-color: #fda86e; 
+   color: white; 
+ }
+
+ .button1:hover {
+   background-color: #e0752e;
+   color: white;
+ }
+
+  /* form { background: #fda86e; padding: 3px; position: fixed; bottom: 0; width: 100%; }
+  form input { border: 0; padding: 10px; width: 90%; margin-right: 0.5%; }
+  form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; } */
+
+
+
+
+  #chatarea.* { margin: 0; padding-top: 10px; margin-bottom: 0px; box-sizing: border-box;}
+  #chatarea.body { font: 13px Helvetica, Arial;}
+  
+  #messages { list-style-type: none; margin: 0px; padding: 0px; color: #ff8533; background-color: rgb(255, 227, 196); float: left; width: fit-content;}
+  #messages li { padding: 5px 10px; }
+
+
+  #mine { list-style-type: none; margin: 0px; padding: 0px; color: rgb(255, 227, 196); background-color: #0b767e; float:right; width: fit-content;}
+  #mine li { padding: 5px 10px; }
+
+
+  form { background: #fda86e; padding: 1px; position: fixed; bottom: 0; width: 670px; margin-bottom: 96px;}
+  form input { border: 16px solid; border-color: #fda86e; padding: 10px; width: 565px; margin-left: -22px; position: bottom;}
+  form button { width: 9%; background: #ff8533; border: none; padding: 10px; color: white;}

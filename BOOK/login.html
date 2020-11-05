@@ -1,82 +1,9 @@
 <!doctype html>
 <html>
   <head>
-    <link rel="stylesheet" href="mystyle.css">
-
+    <link rel="stylesheet" type="text/css" href="chatroom.css">
     <title>Socket.IO chat</title>
 
-    <style>
-      * { margin: 0; padding: 0; box-sizing: border-box; }
-      body { 
-        font: 13px Helvetica, Arial; 
-        background-color: rgb(255, 227, 196);
-      }
-
-      /*COLUMNS*/
-      .header {
-        padding: 10px;
-        margin-top: -15px;
-        margin-left: -10px; 
-        /*background-color: white;*/
-      }
-      .row {
-        display: -webkit-flex;
-        display: flex;
-      }
-      .column {
-        padding: 20px;
-        height: 600px;
-        margin-top: 90px;
-
-      }
-      .column.side {
-         -webkit-flex: 1;
-         -ms-flex: 1;
-         flex: 1;
-      }
-      .column.middle {
-        -webkit-flex: 2;
-        -ms-flex: 2;
-        flex: 2;
-        overflow: scroll;
-        
-      }
-      /*COLUMNS*/
-  
-      /*Button Design*/
-     .button{
-       background-color: #fda86e; 
-       border: none;
-       color: white;
-       padding: 15px 32px;
-       text-align: center;
-       text-decoration: none;
-       display: inline-block;
-       font-size: 24px;
-       margin: 4px 2px;
-       cursor: pointer;
-       font-family:Optima, sans-serif;
-       transition-duration: 0.4s;
-     }
-
-     .button1 {
-       background-color: #fda86e; 
-       color: white; 
-     }
-
-     .button1:hover {
-       background-color: #e0752e;
-       color: white;
-     }
-
-      form { background: #fda86e; padding: 3px; position: fixed; bottom: 0; width: 100%; }
-      form input { border: 0; padding: 10px; width: 90%; margin-right: 0.5%; }
-      form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
-
-      #messages { list-style-type: none; margin: 0; padding: 0; }
-      #messages li { padding: 5px 10px; }
-      #messages li:nth-child(odd) { background: #eee; }
-    </style>
   </head>
   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
   <script src="/socket.io/socket.io.js"></script>
@@ -178,26 +105,12 @@
 
     <button class="button button1" id="pairmeup" style="margin-top: 210px;margin-left: 250px; display: none;">Pair Me Up!</button> 
      <div id="chatarea" style="display: none;">
-
-      <style>
-        #chatarea.* { margin: 0; padding-top: 10px; margin-bottom: 0px; box-sizing: border-box;}
-        #chatarea.body { font: 13px Helvetica, Arial;}
-        
-        #messages { list-style-type: none; margin: 0px; padding: 0px; color: white;}
-        #messages li { padding: 5px 10px; }
-
-        #messages li:nth-child(odd) { background: #4f5964; }
-      </style>
-
-      <style>
-        form { background: #fda86e; padding: 1px; position: fixed; bottom: 0; width: 50%; margin-bottom: 96px;}
-        form input { border: 16px solid; border-color: #fda86e; padding: 10px; width: 90%; margin-left: -22px; position: bottom;}
-        form button { width: 9%; background: #ff8533; border: none; padding: 10px; color: white;}
       </style>
 
       <ul id="messages"></ul>
+      <ul id="mine"></ul>
       <form id="sendmsg" action="">
-        <input id="m" autocomplete="off" /><button>Send</button>
+        <input id="m" autocomplete="off" /><button id=sendBtn>Send</button>
       </form>
 
 
@@ -244,24 +157,32 @@
     </div> -->
 
     <script type="text/javascript">
-      $('#sendmsg').submit(function(e){
-        e.preventDefault(); // prevents page reloading
-        socket.emit('send_chat_message_to_server', $('#m').val());
-        $('#m').val('');
-        return false;
-       
-      });
-      socket.on('get_chat_message_from_server', function(msg){
-        $('#messages').append($('<li>').text( msg["user"] + ": " + msg["message"] ));
-          window.scrollTo(0, document.body.scrollHeight);
-
-      });
-
-
 
       $("#pairmeup").on('click', function() {
         socket.emit("pairplease");
       });
+
+      $('#sendmsg').submit(function(e){
+        e.preventDefault(); // prevents page reloading
+        socket.emit('send_chat_message_to_server', $('#m').val());
+        $('#mine').append($('<li>').text($('#m').val()));
+        $('#m').val('');
+        return false;
+      });
+
+      
+      socket.on('get_chat_message_from_server', function(msg){
+        $('#messages').append($('<li>').text( msg["user"] + ": " + msg["message"] ));
+          window.scrollTo(0, document.body.scrollHeight);
+      });
+      socket.on('get_chat_message_from_server2', function(msg){
+        $('#messages2').append($('<li>').text( msg["user"] + ": " + msg["message"] ));
+          window.scrollTo(0, document.body.scrollHeight);
+      });
+
+
+
+   
 
 
       $("#sendusername").on('click', function() {
