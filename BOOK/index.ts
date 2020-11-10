@@ -36,6 +36,9 @@ app.get("/special_thanks", (req, res) => {
   res.sendFile(__dirname + '/credit.html');
 });
 
+app.get("/photos_squirrels", (req, res) => {
+  res.sendFile(__dirname + '/Squirrels.html');
+});
 
 
 
