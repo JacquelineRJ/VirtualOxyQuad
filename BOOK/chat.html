@@ -2,190 +2,11 @@
 <html>
   
 <head>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
-<style>
-body{
-  background-color: rgb(255, 227, 196);
-}
-
-/*FLEXTCONTAINERS*/
-.header {
-  padding: 10px;
-  margin-top: -10px;
-  margin-left: -10px; 
-  width: 100%;
-  background-color:rgb(255, 249, 242);
-;
-}
-.row {
-  display: -webkit-flex;
-  display: flex;
-}
-
-.column1{
-  padding: 20px;
-  padding-right: 80px;
-  height: 720px; 
-  width: 100%;
-  margin-left: 0px;
-  margin-top: 5px;
-}
-
-.column2{
-  padding: 20px;
-  padding-right: 80px;
-  height: 550px; 
-}
-
-.column1.left /*{ Actually just shorter */ {
-  padding-left: 150px;
-   -webkit-flex: 1;
-   -ms-flex: 1;
-   flex: 1;
-   margin-top: 0px;
-}
-.column1.right { /* Actually just longer */
-  -webkit-flex: 1.5;
-  -ms-flex: 1.5;
-  flex: 1.5;
-} 
-
-div.divider{
-  display: -webkit-flex;
-  display: flex;
-  height: 15px;
-  width: 1200px;
-}
-/*FLEXCONTAINERS*/
-
-
-
-/* ANIMATIONSSSS */
-div.animation1 {
-  position: relative;
-  animation-name: up;
-  animation-duration: 3s;
-  animation-delay: 0s;
-}
-@keyframes up {
-  0%   {right:0px; top:800px;}
-  100% {right:0px; top:0px;}
-}
-
-div.animation2{
-  position: relative;
-  animation-name: slideRight;
-  animation-duration: 7s;
-  animation-delay: 0s;
-  /* want it to happen when sroll down */
-}
-@keyframes slideRight {
-  0%   {right:1200px; top:0px; opacity: 0%;}
-  100% {right:0px; top:0px; opacity: 100%}
-}
-
-div.animation3{
-  position: relative;
-  animation-name: slideLeft;
-  animation-duration: 7s;
-  animation-delay: 0s;
-  /* want it to happen when sroll down */
-}
-@keyframes slideLeft {
-  0%   {right:-1200px; top:0px; opacity: 0%;}
-  100% {right:0px; top:0px; opacity: 100%}
-}
-/* ANIMATIONSSSS */
-
-
-
-
-
-/*Button Design*/
-.button{
-  border: none;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-.button1 {
-  background-color: #fda86e; 
-  color: white; 
-}
-
-.button1:hover {
-  background-color: #0b767e;
-  color: white;
-}
-
-/* FONTS */
-div.a {
-  font-size: 50px;
-  float: left;
-  color: #f18a45;
-  font-family: Optima, sans-serif;
-}
-div.oxy{
-  font-size: 200px;
-  float: left;
-  color: #f18a45;
-  font-family: Optima, sans-serif;
-  margin-top: -45px;
-  margin-left: 230px;
-}
-
-h1{
-  color: rgb(255, 249, 242);
-  float: right;
-  font-size: 65px;
-  margin-top: 0px;
-  font-family: Optima, sans-serif;
-}
-div.description{
-  color: white;
-  float: right;
-  font-size: 18px;
-  margin-top: 100px;
-}
-h2{
-  color: white;
-  font-size: 35px;
-  text-align: center;
-  margin-top: 400px;
-}
-/* FONTS */
-
-img{
-  margin-top: 100px;
-  margin-left: 0px;
-}
-
-
-div.gallery{
-  margin: 5px;
-  float: left;
-  /* border: 10px solid #fda86e; */
-  width: 540px;
-  height: 515px;
-  margin-top: 70px;
-  margin-left: -420px;
-  background-image: url(TigerNOHat.png); background-size: cover; background-position: center;
-}
-
-div.gallery img {
-  float: left;
-  width: 100%;
-  height: auto;
-}
-
-
-
-</style>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link rel="stylesheet" type="text/css" href="homePage.css"/> 
 </head>
+
+
 <body>
 
 
@@ -214,54 +35,49 @@ div.gallery img {
 
 <div class="divider" style="height: 15px;"></div>
 <!-- CHAT DESCRIPTION -->
-<!-- <div class="animation2"> -->
-  <div class=row>
-    <div class="column2 right" style="background-color: #fda86e;">
-      <h1>Chat Room</h1>
-      <div class="description">Lets you talk to other people :)</div>
-      <h2>"INSTERT QUOTE ABT SPONTANEOUS MEETING"</h2>
-    </div>
-    <div class="column2 left" style="background-color: #fda86e">
-      <img src="oxyquad3.png"> 
-      <!-- IMAGE^^^^^^^^^^^^ -->
-    </div>
+<div class=row>
+  <div class="column2 right" style="background-color: #ffb17d;">
+    <div class="title">GatherTown</div>
+    <div class="description">Lets you talk to other people :) </div>
+    <!-- <div class="other">"INSTERT QUOTE ABT SPONTANEOUS MEETING"</div> -->
   </div>
-<!-- </div> -->
+  <div class="column2 left" style="background-color: #ffb17d">
+    <img class="examples" src="oxyquad3.png"> 
+    <!-- IMAGE^^^^^^^^^^^^ -->
+  </div>
+</div>
 
 <div class="divider" style="height: 20px;"></div>
 <!-- PHOTO GALLERY DESCRIPTION -->
-<!-- <div class="animation3"> -->
-  <div class=row>
-    <div class="column2 left" style="background-color: rgb(255, 249, 242)">
-      <img src="oxyquad3.png" style="margin-left: 100px;"> 
-      <!-- IMAGE^^^^^^^^^^^^ -->
-    </div>
-    <div class="column2 right" style="background-color:rgb(255, 249, 242);">
-      <h1 style="float: left; color: #fda86e;">Photo Gallery</h1>
-      <div class="description" style="float: left; color: #f18a45;">
-        See quad events and stuff 
-      </div>
-      <h2 >"INSTERT ABOUT QUAD SQUIRRELS? LOL"</h2>
-    </div>
+<div class=row>
+  <div class="column2 left" style="background-color: rgb(255, 239, 220)">
+    <img class="examples" src="oxyquad3.png" style="margin-left: 100px;"> 
+    <!-- IMAGE^^^^^^^^^^^^ -->
   </div>
-<!-- </div> -->
+  <div class="column2 right" style="background-color:rgb(255, 239, 220);">
+    <div class="title" style="float: right; color: #fda86e;">Chat Room</div>
+    <div class="description" style="color: #f18a45; border-color:#ffb17d;">
+      See quad events and stuff 
+    </div>
+    <!-- <div class="other" >"INSTERT ABOUT QUAD SQUIRRELS? LOL"</div> -->
+  </div>
+</div>
+
 
 <div class="divider" style="height: 20px;"></div>
 <!-- GATHERTOWN DESCRIPTION -->
-<!-- <div class="animation2"> -->
-  <div class=row>
-    <div class="column2 right" style="background-color: #fda86e;">
-      <h1>GatherTown </h1>
-      <div class="description">
-        Interact with other students!
-      </div>
-      <h2>"INSTERT QUOTE ABT SPONTANEOUS MEETING"</h2>
+<div class=row>
+  <div class="column2 right" style="background-color: #ffb17d;">
+    <div class="title">Photo Gallery</div>
+    <div class="description" style="margin-top: 110px;">
+      Interact with other students!
     </div>
-    <div class="column2 left" style="background-color: #fda86e;">
-      <img src="oxyquad3.png"> 
-      <!-- IMAGE^^^^^^^^^^^^ -->
-    </div>
-  <!-- </div> -->
+    <!-- <div class="other">"INSTERT QUOTE ABT SPONTANEOUS MEETING"</div> -->
+  </div>
+  <div class="column2 left" style="background-color: #ffb17d;">
+    <img class="examples" src="oxyquad3.png"> 
+    <!-- IMAGE^^^^^^^^^^^^ -->
+  </div>
 </div>
 
 

@@ -1,0 +1,186 @@
+body{
+    background-color: rgb(255, 227, 196);
+  }
+  
+  /*FLEXTCONTAINERS*/
+  .header {
+    padding: 10px;
+    margin-top: -10px;
+    margin-left: -10px; 
+    width: 100%;
+    background-color:rgb(255, 249, 242);
+  ;
+  }
+  .row {
+    display: -webkit-flex;
+    display: flex;
+  }
+  
+  .column1{
+    padding: 20px;
+    padding-right: 80px;
+    height: 720px; 
+    width: 100%;
+    margin-left: 0px;
+    margin-top: 5px;
+  }
+  
+  .column2{
+    padding: 20px;
+    padding-right: 80px;
+    height: 550px;
+    width: 700px; 
+  }
+  
+  .column1.left /*{ Actually just shorter */ {
+    padding-left: 150px;
+     -webkit-flex: 1;
+     -ms-flex: 1;
+     flex: 1;
+     margin-top: 0px;
+  }
+  .column1.right { /* Actually just longer */
+    -webkit-flex: 1.5;
+    -ms-flex: 1.5;
+    flex: 1.5;
+  } 
+  
+  div.divider{
+    display: -webkit-flex;
+    display: flex;
+    height: 15px;
+    width: 1200px;
+  }
+  /*FLEXCONTAINERS*/
+  
+  
+  
+  /* ANIMATIONSSSS */
+  div.animation1 {
+    position: relative;
+    animation-name: up;
+    animation-duration: 3s;
+    animation-delay: 0s;
+  }
+  @keyframes up {
+    0%   {right:0px; top:800px;}
+    100% {right:0px; top:0px;}
+  }
+  
+  div.animation2{
+    position: relative;
+    animation-name: slideRight;
+    animation-duration: 7s;
+    animation-delay: 0s;
+    /* want it to happen when sroll down */
+  }
+  @keyframes slideRight {
+    0%   {right:1200px; top:0px; opacity: 0%;}
+    100% {right:0px; top:0px; opacity: 100%}
+  }
+  
+  div.animation3{
+    position: relative;
+    animation-name: slideLeft;
+    animation-duration: 7s;
+    animation-delay: 0s;
+    /* want it to happen when sroll down */
+  }
+  @keyframes slideLeft {
+    0%   {right:-1200px; top:0px; opacity: 0%;}
+    100% {right:0px; top:0px; opacity: 100%}
+  }
+  /* ANIMATIONSSSS */
+  
+  
+  
+  
+  
+  /*Button Design*/
+  .button{
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  .button1 {
+    background-color: #fda86e; 
+    color: white; 
+  }
+  
+  .button1:hover {
+    background-color: #0b767e;
+    color: white;
+  }
+  
+  /* FONTS */
+  div.a {
+    font-size: 50px;
+    float: left;
+    color: #f18a45;
+    font-family: Optima, sans-serif;
+  }
+  div.oxy{
+    font-size: 200px;
+    float: left;
+    color: #f18a45;
+    font-family: Optima, sans-serif;
+    margin-top: -45px;
+    margin-left: 230px;
+  }
+  
+    div.title{
+    color: rgb(255, 249, 242);
+    float: left;
+    font-size: 65px;
+    font-weight: bold;
+    margin-top: 20px;
+    font-family: Optima, sans-serif;
+    padding: 0px;
+  }
+  div.description{
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 100px;
+    padding: 50px;
+    font-family: Optima, sans-serif;
+    border-top: solid 3px;
+    border-bottom: solid 3px;
+    border-color: rgb(255, 227, 196);
+  }
+  div.other{
+    color: white;
+    font-size: 35px;
+    text-align: center;
+    margin-top: 400px;
+  }
+  /* FONTS */
+  
+  img.examples{
+    margin-top: 50px;
+    margin-left: 0px;
+    padding: 50px;
+  }
+  
+  
+  div.gallery{
+    margin: 5px;
+    float: left;
+    /* border: 10px solid #fda86e; */
+    width: 540px;
+    height: 515px;
+    margin-top: 70px;
+    margin-left: -420px;
+    background-image: url(TigerNOHat.png); background-size: cover; background-position: center;
+  }
+  
+  div.gallery img {
+    float: left;
+    width: 100%;
+    height: auto;
+  }
