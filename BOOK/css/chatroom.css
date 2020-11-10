@@ -75,7 +75,7 @@ body {
   #messages li { color: rgb(255, 242, 227); padding: 5px 10px; background-color: #ec884d; border: 8px solid; border-right: transparent; border-left: transparent; border-color: #ec884d; border-radius: 15px 15px 15px 2px; margin-top: 5px; margin-bottom: 2px;}
   /* #messages.mine {list-style-type: none; margin: 0px; padding: 0px; color: rgb(255, 227, 196); background-color: #0b767e; float:right; width: fit-content;} */
   #messages :not(li) {color: #ff8533; border: 8px solid;border-color: rgb(255, 227, 196); background-color: rgb(255, 227, 196); width: 90%; margin-left: 340px; border-radius: 15px 15px 2px 15px; margin-top: 5px; text-align: left; margin-bottom: 2px;}
-  #messages :not(li):not(div) {color: #bd6939; font-size: 13; background-color: transparent; border: none;}
+  #messages :not(li):not(div) {color: #bd6939; font-size: 13; background-color: transparent; border: none; text-align: left; margin-left: 0px;}
 
 
   #mine { list-style-type: none; margin: 0px; padding: 0px; color: rgb(255, 227, 196); background-color: #0b767e; float:right; width: 90%;}

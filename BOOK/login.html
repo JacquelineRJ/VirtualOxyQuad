@@ -72,6 +72,10 @@
     let name = window.prompt("What is your name?");
     socket.emit("register_name", name);
 
+    socket.on("user_logged_off", function (msg) {
+      $("#messages").append($('<p>').text(msg))
+    });
+
 
 
   </script>
@@ -173,7 +177,7 @@
 
       
       socket.on('get_chat_message_from_server', function(msg){
-        $('#messages').append($('<li>').text( msg["user"] + ": " + msg["message"] ));
+        $('#messages').append($('<li>').text(msg["message"] ));
           window.scrollTo(0, document.body.scrollHeight);
       });
  
