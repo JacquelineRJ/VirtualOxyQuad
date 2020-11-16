@@ -1,0 +1,71 @@
+body{
+    background-color: rgb(255, 249, 242);
+  }
+  
+  /*FLEXTCONTAINERS*/
+  .header {
+    padding: 10px;
+    margin-top: -10px;
+    margin-left: -10px; 
+    width: 100%;
+    background-color:rgb(255, 249, 242);
+    height: 20px;
+  }
+  .row {
+    display: -webkit-flex;
+    display: flex;
+    background-color: rgb(255, 227, 196);
+  }
+  
+  .column1{
+    padding: 20px;
+    padding-right: 80px;
+    height: 720px; 
+    width: 100%;
+    margin-left: 0px;
+    margin-top: 5px;
+  }
+  
+  .column2{
+    padding: 20px;
+    padding-right: 80px;
+    height: 550px;
+    width: 700px; 
+  }
+  
+  .column1.left /*{ Actually just shorter */ {
+    padding-left: 150px;
+     -webkit-flex: 1;
+     -ms-flex: 1;
+     flex: 1;
+     margin-top: 0px;
+  }
+  .column1.right { /* Actually just longer */
+    -webkit-flex: 1.5;
+    -ms-flex: 1.5;
+    flex: 1.5;
+  } 
+  
+  div.divider{
+    display: -webkit-flex;
+    display: flex;
+    height: 15px;
+    width: 1200px;
+  }
+  /*FLEXCONTAINERS*/
+  
+h1 {
+  color: #f18a45;
+  text-align: center;
+  font-family: Optima, sans-serif;
+  font-size: 200px;
+  margin-top: 250px;
+  font-weight: 500px;
+  margin-left: 45px;
+}
+
+p {
+  font-family: verdana;
+  font-size: 20px;
+  text-align: center;
+}

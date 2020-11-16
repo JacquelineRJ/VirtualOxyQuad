@@ -7,47 +7,50 @@
 <body>
 
 
-  <div class="title" id="Left_Sdide">
+  <div class="title" id="Left_Side">
     <h1 style="margin-top: 50px;">QUAD</h1>
     <p style="margin-top: -65px;">Photo Gallery</p>
-    <button2 class="button2 button2Link">Squirrels</button2>
-    <button2 class="button2 button2Link">Events</button2>
-    <button2 class="button2 button2Link">Nature</button2>
-    <button2 class="button2 button2Link">Other</button2>
+    <button2 class="button2 button2Link" id="all_photos">All</button2>
+    <button2 class="button2 button2Link" id="squirrel_photos">Squirrels</button2>
+    <button2 class="button2 button2Link" id="nature_photos">Nature</button2>
+    <button2 class="button2 button2Link" id="aerial_photos">Aerial</button2>
+    <button2 class="button2 button2Link" id="campus_photos">Campus</button2>
+    <button2 class="button2 button2Link" id="oswald_photos">Oswald</button2>
   </div>
+
 
   <div class="divider" style="margin-top: -16px;"></div>
 
   <div class="row">
-    <div class="button"
-      style="background-image: url(Squirrel_2.jpg); margin-left: 350px; background-position-y: -50px;">
+    <div class="button" id="image_R1" onclick="zoomIn(this.id)"
+      style="background-image: url(2012-1121_Squirrel-1.jpg); margin-left: 350px;">
     </div>
     
-    <div class="button"
-      style="background-image: url(Squirrel_3.jpg); margin-left: 30px; background-position-y: -50px;">
+    <div class="button" id="image_R1L" onclick="zoomIn(this.id)"
+      style="background-image: url(2013-0828_HotSquirrel.jpg); margin-left: 30px;">
     </div>
   </div>
 
 <div class="divider"></div>
 
 <div class="row">
-  <div class="button"
-    style="background-image: url(Squirrel_4.jpg); margin-left: 350px; background-position-y: -25px;">
+  <div class="button" id="image_R2" onclick="zoomIn(this.id)"
+    style="background-image: url(2015-1222_Squirrel-24.jpg); margin-left: 350px; ">
   </div>
   
-  <div class="button"
-    style="background-image: url(Squirrel_5.jpg); margin-left: 30px;">
+  <div class="button" id="image_R2L" onclick="zoomIn(this.id)"
+    style="background-image: url(2015-1222_Squirrel-26.jpg); margin-left: 30px;">
   </div>
 </div>
 
 <div class="divider"></div>
 
 <div class="row">
-  <div class="button"
+  <div class="button"id="image_R3" onclick="zoomIn(this.id)"
     style="background-image: url(Squirrel_6.jpg); margin-left: 350px; background-position-y: -65px;">
   </div>
   
-  <div class="button"
+  <div class="button" id="image_R3L" onclick="zoomIn(this.id)"
     style="background-image: url(Squirrel_7.jpg); margin-left: 30px;">
   </div>
 </div>
@@ -55,26 +58,129 @@
 <div class="divider"></div>
 
 <div class="row">
-  <div class="button"
+  <div class="button" id="image_R4" onclick="zoomIn(this.id)"
     style="background-image: url(Squirrel_9.jpg); margin-left: 350px; background-position-y: -65px;">
   </div>
   
-  <div class="button"
+  <div class="button" id="image_R4L" onclick="zoomIn(this.id)"
     style="background-image: url(Squirrel_10.jpg); margin-left: 30px;">
   </div>
 </div>
 
 <div class="divider"></div>
 
-<div class="divider"></div>
-
 <div class="row">
-  <div class="button"
+  <div class="button" id="image_R5" onclick="zoomIn(this.id)"
     style="background-image: url(Squirrel_8.jpg); margin-left: 350px; background-position-y: -210px;">
   </div>
 
+  <div class="button" id="image_R5L" onclick="zoomIn(this.id)"
+    style="background-image: url(2014-0131_Squirrel-06.jpg); margin-left: 30px;">
+  </div>
 </div>
 
+<div class="divider"></div>
+
+<div class="row">
+  <div class="button" id="image_R6" onclick="zoomIn(this.id)"
+    style="background-image: url(Squirrel_2.jpg); margin-left: 350px; background-position-y: -65px;">
+  </div>
+  
+  <div class="button" id="image_R6L" onclick="zoomIn(this.id)"
+    style="background-image: url(Squirrel_3.jpg); margin-left: 30px;">
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="row">
+  <div class="button" id="image_R7" onclick="zoomIn(this.id)"
+    style="background-image: url(Squirrel_4.jpg); margin-left: 350px; background-position-y: -65px;">
+  </div>
+  
+  <div class="button" id="image_R7L" onclick="zoomIn(this.id)"
+    style="background-image: url(Squirrel_5.jpg); margin-left: 30px;">
+  </div>
+</div>
+ 
+<script type="text/javascript">
+
+  function zoomIn(clicked_id){
+    var img = document.getElementById(clicked_id);
+
+    if(clicked_id.includes("L")){
+      var img2 = document.getElementById(clicked_id.replace("L", ""));
+      if (img.style.width == "1000px"){
+        img.style.width = "400px";
+        img.style.height = "300px";
+        img.style.backgroundSize = "cover";
+        img.style.cursor = "zoom-in"
+        img.style.marginLeft = "30px";
+        img2.style.display = "block";
+      }
+      else{
+        img.style.width = "1000px";
+        img.style.height = "1000px";
+        img.style.backgroundSize = "contain";
+        img.style.alignContent = "center";
+        img.style.backgroundRepeat = "no-repeat";
+        img.style.cursor="zoom-out";
+        img.style.marginLeft = "300px";
+        img2.style.display = "none";
+      }
+    }
+    else{
+      var img2 = document.getElementById(clicked_id + "L");
+
+      if (img.style.width == "1000px"){
+      
+        img.style.width = "400px";
+        img.style.height = "300px";
+        img.style.backgroundSize = "cover";
+        img.style.cursor = "zoom-in"
+
+        img2.style.display = "block";
+      
+      }
+      else{
+        img.style.width = "1000px";
+        img.style.height = "1000px";
+        img.style.backgroundSize = "contain";
+        img.style.alignContent = "center";
+        img.style.backgroundRepeat = "no-repeat";
+        img.style.cursor="zoom-out"
+        img2.style.display = "none";
+      }
+    }
+  }
+
+
+  document.getElementById("all_photos").onclick = function (e) {
+      e.preventDefault();
+      location.href = "/photos";
+  };
+  document.getElementById("squirrel_photos").onclick = function (e) {
+      e.preventDefault();
+      location.href = "/photos_squirrels";
+  };
+  document.getElementById("nature_photos").onclick = function (e) {
+      e.preventDefault();
+      location.href = "/photos_nature";
+  };
+  document.getElementById("aerial_photos").onclick = function (e) {
+      e.preventDefault();
+      location.href = "/photos_aerial";
+  };
+  document.getElementById("campus_photos").onclick = function (e) {
+      e.preventDefault();
+      location.href = "/photos_campus";
+  };
+  document.getElementById("oswald_photos").onclick = function (e) {
+      e.preventDefault();
+      location.href = "/photos_oswald";
+  };
+
+</script>
 
 </body>
 </html>

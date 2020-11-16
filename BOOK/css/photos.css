@@ -4,6 +4,8 @@ h1 {
   text-align: center;
   font-family: Optima, sans-serif;
   font-size: 85px;
+  cursor: pointer;
+  margin-top: 50px;
 }
   
 p {
@@ -39,8 +41,8 @@ p {
 .button{
   padding: 20px;
   padding-right: 80px; 
-  display: -webkit-flex;
-  display: flex;
+  display: -webkit-flex; 
+  display: flex; 
   background-size: cover;
   height: 300px;
   width: 400px;
@@ -48,10 +50,16 @@ p {
   border: none;
   display: inline-block;
   cursor: zoom-in;
+  display: ;
+}
+
+img{
+  cursor: zoom-out
+
 }
 
 .button:hover{
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .button2{
@@ -62,7 +70,7 @@ p {
   display: inline-block;
   font-size: 18px;
   margin: 4px 2px;
-  margin-left: 20px;
+  width: 100px;
   cursor: pointer;
   color: #f18a45;
   font-family: Optima, sans-serif;

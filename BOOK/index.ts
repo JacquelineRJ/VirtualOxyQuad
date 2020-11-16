@@ -18,7 +18,7 @@ var all_users = {};
 //login page
 
 app.get('/', (req, res) => {
-	res.sendFile(__dirname + '/chat.html');
+	res.sendFile(__dirname + '/homePage.html');
 });
 
 // chat page
@@ -32,12 +32,25 @@ app.get('/photos', (req, res) => {
  
 });
 
-app.get("/special_thanks", (req, res) => {
-  res.sendFile(__dirname + '/credit.html');
+app.get("/gatherTown_portal", (req, res) => {
+  res.sendFile(__dirname + '/gatherTown.html');
 });
 
 app.get("/photos_squirrels", (req, res) => {
   res.sendFile(__dirname + '/Squirrels.html');
+});
+
+app.get("/photos_nature", (req, res) => {
+  res.sendFile(__dirname + '/nature.html');
+});
+app.get("/photos_aerial", (req, res) => {
+  res.sendFile(__dirname + '/aerial.html');
+});
+app.get("/photos_campus", (req,res) => {
+  res.sendFile(__dirname + '/campus.html');
+});
+app.get("/photos_oswald", (req,res) => {
+  res.sendFile(__dirname + '/oswald.html');
 });
 
 

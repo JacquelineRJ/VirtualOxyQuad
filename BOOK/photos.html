@@ -4,113 +4,434 @@
   <title>PhotoGallery</title>
   <link rel="stylesheet" type="text/css" href="photos.css"/>
 </head>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 <body>
 
 
-  <div class="title" id="Left_Sdide">
-    <h1 style="margin-top: 50px;">QUAD</h1>
+  <div class="title" id="Left_Side">
+    <h1 id="home">QUAD</h1>
     <p style="margin-top: -65px;">Photo Gallery</p>
+    <button2 class="button2 button2Link" id="all_photos">All</button2>
     <button2 class="button2 button2Link" id="squirrel_photos">Squirrels</button2>
-    <button2 class="button2 button2Link">Events</button2>
-    <button2 class="button2 button2Link">Nature</button2>
-    <button2 class="button2 button2Link">Other</button2>
+    <button2 class="button2 button2Link" id="nature_photos">Nature</button2>
+    <button2 class="button2 button2Link" id="aerial_photos">Aerial</button2>
+    <button2 class="button2 button2Link" id="campus_photos">Campus</button2>
+    <button2 class="button2 button2Link" id="oswald_photos">Oswald</button2>
   </div>
 
   <div class="divider" style="margin-top: -16px;"></div>
 
-  <div class="row">
-    <div class="button"
-      style="background-image: url(Squirrel_2.jpg); margin-left: 350px; background-position-y: -50px;">
-    </div>
-    
-    <div class="button"
-      style="background-image: url(Squirrel_3.jpg); margin-left: 30px; background-position-y: -50px;">
-    </div>
+<div class="row">
+  <div class="button" id="image_R7" onclick="zoomIn(this.id)"
+    style="background-image: url(2012-1121_Squirrel-1.jpg); margin-left: 350px;">
   </div>
+
+  <div class="button" id="image_R7L" onclick="zoomIn(this.id)"
+    style="background-image: url(2013-0109_LibraryAhmanson-29.jpg); margin-left: 30px;">
+  </div>
+</div>
 
 <div class="divider"></div>
 
 <div class="row">
-  <div class="button"
-    style="background-image: url(Squirrel_4.jpg); margin-left: 350px; background-position-y: -25px;">
+  <div class="button" id="image_R8" onclick="zoomIn(this.id)"
+    style="background-image: url(2013-0828_HotSquirrel.jpg); margin-left: 350px; background-repeat: no-repeat; ">
   </div>
   
-  <div class="button"
-    style="background-image: url(Squirrel_5.jpg); margin-left: 30px;">
+  <div class="button" id="image_R8L" onclick="zoomIn(this.id)"
+    style="background-image: url(2013-0925_JohnsonHall2-109.jpg); margin-left: 30px;">
   </div>
 </div>
 
 <div class="divider"></div>
 
 <div class="row">
-  <div class="button"
-    style="background-image: url(Squirrel_6.jpg); margin-left: 350px; background-position-y: -65px;">
+  <div class="button" id="image_R9" onclick="zoomIn(this.id)"
+    style="background-image: url(2013-1106_KnittingNation-0487.jpg); margin-left: 350px;">
   </div>
   
-  <div class="button"
-    style="background-image: url(Squirrel_7.jpg); margin-left: 30px;">
+  <div class="button" id="image_R9L" onclick="zoomIn(this.id)"
+    style="background-image: url(2013-1122_JSCRoseHills-13.jpg); margin-left: 30px;">
   </div>
 </div>
 
 <div class="divider"></div>
 
 <div class="row">
-  <div class="button"
-    style="background-image: url(Squirrel_8.jpg); margin-left: 350px; background-position-y: -210px;">
+  <div class="button" id="image_R10" onclick="zoomIn(this.id)"
+    style="background-image: url(2014-0131_Squirrel-06.jpg); margin-left: 350px;">
   </div>
   
-  <div class="button"
-    style="background-image: url(Bird_1.jpg); margin-left: 30px;">
+  <div class="button" id="image_R10L" onclick="zoomIn(this.id)"
+    style="background-image: url(2014-1113_BoothHall-07.jpg); margin-left: 30px;">
   </div>
 </div>
 
 <div class="divider"></div>
 
 <div class="row">
-  <div class="button"
-    style="background-image: url(Lizard_1.jpg); margin-left: 350px; background-position-y: -210px;">
+  <div class="button" id="image_R11" onclick="zoomIn(this.id)"
+    style="background-image: url(2015-1222_Squirrel-24.jpg); margin-left: 350px;">
   </div>
   
-  <div class="button"
-    style="background-image: url(Bird_2.jpg); margin-left: 30px;">
+  <div class="button" id="image_R11L" onclick="zoomIn(this.id)"
+    style="background-image: url(2015-1222_Squirrel-26.jpg); margin-left: 30px;">
   </div>
 </div>
 
 <div class="divider"></div>
 
 <div class="row">
-  <div class="button"
-    style="background-image: url(Squirrel_9.jpg); margin-left: 350px; background-position-y: -65px;">
+  <div class="button" id="image_R12" onclick="zoomIn(this.id)"
+    style="background-image: url(2017-0328_Aerial-06.jpg); margin-left: 350px;">
   </div>
   
-  <div class="button"
-    style="background-image: url(Squirrel_10.jpg); margin-left: 30px;">
+  <div class="button" id="image_R12L" onclick="zoomIn(this.id)"
+    style="background-image: url(2017-0328_Aerial-11.jpg); margin-left: 30px;">
   </div>
 </div>
 
 <div class="divider"></div>
 
 <div class="row">
-  <div class="button"
-    style="background-image: url(OxyBike.jpg); margin-left: 350px;">
+  <div class="button" id="image_R13" onclick="zoomIn(this.id)"
+    style="background-image: url(2017-0329_Aerial-01.jpg); margin-left: 350px;">
+  </div>
+  
+  <div class="button" id="image_R13L" onclick="zoomIn(this.id)"
+    style="background-image: url(2017-0404_Aerial-01.jpg); margin-left: 30px;">
   </div>
 </div>
+
+<div class="divider"></div>
+
+<div class="row">
+  <div class="button" id="image_R14" onclick="zoomIn(this.id)"
+    style="background-image: url(2017-0821_SolarEclipse-214.jpg); margin-left: 350px;">
+  </div>
+  
+  <div class="button" id="image_R14L" onclick="zoomIn(this.id)"
+    style="background-image: url(2017-0821_SolarEclipse-220.jpg); margin-left: 30px;">
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="row">
+  <div class="button" id="image_R15" onclick="zoomIn(this.id)"
+    style="background-image: url(2017-0821_ThorneHall-Flowers-09.jpg); margin-left: 350px;">
+  </div>
+  
+  <div class="button" id="image_R15L" onclick="zoomIn(this.id)"
+    style="background-image: url(2017-1014_Homecoming-319.jpg); margin-left: 30px;">
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="row">
+  <div class="button" id="image_R16" onclick="zoomIn(this.id)"
+    style="background-image: url(2017-1110_ExploreOxyFallPreviewDay-071.jpg); margin-left: 350px;">
+  </div>
+  
+  <div class="button" id="image_R16L" onclick="zoomIn(this.id)"
+    style="background-image: url(2017-1117_-AcademicQuad-58.jpg); margin-left: 30px;">
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="row">
+  <div class="button" id="image_R17" onclick="zoomIn(this.id)"
+    style="background-image: url(2017-1117-WalkwayTree-48.jpg); margin-left: 350px;">
+  </div>
+  
+  <div class="button" id="image_R17L" onclick="zoomIn(this.id)"
+    style="background-image: url(2018-0320_RoseHillsPlaza-18.jpg); margin-left: 30px;">
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="row">
+  <div class="button" id="image_R18" onclick="zoomIn(this.id)"
+    style="background-image: url(2018-0323_JSCQuad-010.jpg); margin-left: 350px;">
+  </div>
+  
+  <div class="button" id="image_R18L" onclick="zoomIn(this.id)"
+    style="background-image: url(2018-0328_AcademicCommons-25.jpg); margin-left: 30px;">
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="row">
+  <div class="button" id="image_R19" onclick="zoomIn(this.id)"
+    style="background-image: url(2018-0328_AcademicQuad-010.jpg); margin-left: 350px;">
+  </div>
+  
+  <div class="button" id="image_R19L" onclick="zoomIn(this.id)"
+    style="background-image: url(2018-0328_AcademicQuad-058.jpg); margin-left: 30px;">
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="row">
+  <div class="button" id="image_R20" onclick="zoomIn(this.id)"
+    style="background-image: url(2018-0328_Flowers-JohnsonHall-03.jpg); margin-left: 350px;">
+  </div>
+  
+  <div class="button" id="image_R20L" onclick="zoomIn(this.id)"
+    style="background-image: url(2018-0328_JSCQuadTree-15.jpg); margin-left: 30px;">
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="row">
+  <div class="button" id="image_R21" onclick="zoomIn(this.id)"
+    style="background-image: url(2018-0328_JSCQuadTree-20.jpg); margin-left: 350px;">
+  </div>
+  
+  <div class="button" id="image_R21L" onclick="zoomIn(this.id)"
+    style="background-image: url(2018-0608_WhiteFlowersWeingart-04.jpg); margin-left: 30px;">
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="row">
+  <div class="button" id="image_R22" onclick="zoomIn(this.id)"
+    style="background-image: url(2019-0123_Lift-JSC-23.jpg); margin-left: 350px;">
+  </div>
+  
+  <div class="button" id="image_R22L" onclick="zoomIn(this.id)"
+    style="background-image: url(2019-0123_Lift-WalkwayQuad-126.jpg); margin-left: 30px;">
+  </div>
+</div>
+
+
+<div class="divider"></div>
+
+<div class="row">
+  <div class="button" id="image_R23" onclick="zoomIn(this.id)"
+    style="background-image: url(2019-0227_JSCTower-197.jpg); margin-left: 350px;">
+  </div>
+  
+  <div class="button" id="image_R23L" onclick="zoomIn(this.id)"
+    style="background-image: url(2019-0313_Butterflies-505.jpg); margin-left: 30px;">
+  </div>
+</div>
+
+
+<div class="divider"></div>
+
+<div class="row">
+  <div class="button" id="image_R24" onclick="zoomIn(this.id)"
+    style="background-image: url(2019-0326_PinkFlowers-091.jpg); margin-left: 350px;">
+  </div>
+  
+  <div class="button" id="image_R24L" onclick="zoomIn(this.id)"
+    style="background-image: url(2019-0419_ExperienceOxy-011.jpg); margin-left: 30px;">
+  </div>
+</div>
+
+
+<div class="divider"></div>
+
+<div class="row">
+  <div class="button" id="image_R25" onclick="zoomIn(this.id)"
+    style="background-image: url(2019-0503_Campus-107.jpg); margin-left: 350px;">
+  </div>
+  
+  <div class="button" id="image_R25L" onclick="zoomIn(this.id)"
+    style="background-image: url(2019-0503_Campus-124.jpg); margin-left: 30px;">
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="row">
+  <div class="button" id="image_R26" onclick="zoomIn(this.id)"
+    style="background-image: url(2019-1019_HFW-OswaldsCarnivalTailgate-057.jpg); margin-left: 350px;">
+  </div>
+  
+  <div class="button" id="image_R26L" onclick="zoomIn(this.id)"
+    style="background-image: url(2019-1019_HFW-OswaldsCarnivalTailgate-684.jpg); margin-left: 30px;">
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="row">
+  <div class="button" id="image_R27" onclick="zoomIn(this.id)"
+    style="background-image: url(2019-1029_Sunset-002.jpg); margin-left: 350px;">
+  </div>
+  
+  <div class="button" id="image_R27L" onclick="zoomIn(this.id)"
+    style="background-image: url(2020-1009_AcademicQuad-Benches-02.jpg); margin-left: 30px;">
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="row">
+  <div class="button" id="image_R1" onclick="zoomIn(this.id)"
+    style="background-image: url(Squirrel_2.jpg); margin-left: 350px; background-position-y: -50px;">
+  </div>
+  
+  <div class="button" id="image_R1L" onclick="zoomIn(this.id)"
+    style="background-image: url(Squirrel_3.jpg); margin-left: 30px; background-position-y: -50px;">
+  </div>
+
+</div>
+
+<div class="divider"></div>
+
+<div class="row">
+<div class="button" id="image_R2" onclick="zoomIn(this.id)"
+  style="background-image: url(Squirrel_4.jpg); margin-left: 350px; background-position-y: -25px;">
+</div>
+
+<div class="button" id = "image_R2L" onclick="zoomInL(this.Id)"
+  style="display: block; background-image: url(Squirrel_5.jpg); margin-left: 30px;">
+</div>
+</div>
+
+<div class="divider"></div>
+
+<div class="row">
+<div class="button" id="image_R3" onclick="zoomIn(this.id)"
+  style="background-image: url(Squirrel_6.jpg); margin-left: 350px; background-position-y: -65px;">
+</div>
+
+<div class="button" id="image_R3L" onclick="zoomIn(this.id)"
+  style="background-image: url(Squirrel_7.jpg); margin-left: 30px;">
+</div>
+</div>
+
+<div class="divider"></div>
+
+<div class="row">
+<div class="button" id="image_R4" onclick="zoomIn(this.id)"
+  style="background-image: url(Squirrel_8.jpg); margin-left: 350px; background-position-y: -210px;">
+</div>
+
+<div class="button" id="image_R4L" onclick="zoomIn(this.id)"
+  style="background-image: url(Bird_1.jpg); margin-left: 30px;">
+</div>
+</div>
+
+<div class="divider"></div>
+
+<div class="row">
+<div class="button" id="image_R5" onclick="zoomIn(this.id)"
+  style="background-image: url(Lizard_1.jpg); margin-left: 350px; background-position-y: -210px;">
+</div>
+
+<div class="button" id="image_R5L" onclick="zoomIn(this.id)"
+  style="background-image: url(Bird_2.jpg); margin-left: 30px;">
+</div>
+</div>
+
+<div class="divider"></div>
+
+<div class="row">
+<div class="button" id="image_R6" onclick="zoomIn(this.id)"
+  style="background-image: url(Squirrel_9.jpg); margin-left: 350px; background-position-y: -65px;">
+</div>
+
+<div class="button" id="image_R6L" onclick="zoomIn(this.id)"
+  style="background-image: url(Squirrel_10.jpg); margin-left: 30px;">
+</div>
+</div>
+
+<div class="divider"></div>
+
+
 
 
 <script type="text/javascript">
+
+  function zoomIn(clicked_id){
+    var img = document.getElementById(clicked_id);
+
+    if(clicked_id.includes("L")){
+      var img2 = document.getElementById(clicked_id.replace("L", ""));
+      if (img.style.width == "1000px"){
+        img.style.width = "400px";
+        img.style.height = "300px";
+        img.style.backgroundSize = "cover";
+        img.style.cursor = "zoom-in"
+        img.style.marginLeft = "30px";
+        img2.style.display = "block";
+      }
+      else{
+        img.style.width = "1000px";
+        img.style.height = "1000px";
+        img.style.backgroundSize = "contain";
+        img.style.alignContent = "center";
+        img.style.backgroundRepeat = "no-repeat";
+        img.style.cursor="zoom-out";
+        img.style.marginLeft = "300px";
+        img2.style.display = "none";
+      }
+    }
+    else{
+      var img2 = document.getElementById(clicked_id + "L");
+
+      if (img.style.width == "1000px"){
+      
+        img.style.width = "400px";
+        img.style.height = "300px";
+        img.style.backgroundSize = "cover";
+        img.style.cursor = "zoom-in"
+
+        img2.style.display = "block";
+      
+      }
+      else{
+        img.style.width = "1000px";
+        img.style.height = "1000px";
+        img.style.backgroundSize = "contain";
+        img.style.alignContent = "center";
+        img.style.backgroundRepeat = "no-repeat";
+        img.style.cursor="zoom-out"
+        img2.style.display = "none";
+      }
+    }
+  }
+
+  document.getElementById("all_photos").onclick = function (e) {
+      e.preventDefault();
+      location.href = "/photos";
+  };
   document.getElementById("squirrel_photos").onclick = function (e) {
       e.preventDefault();
       location.href = "/photos_squirrels";
   };
-  // document.getElementById("photo_gallery").onclick = function (e) {
-  //     e.preventDefault();
-  //     location.href = "/photos";
-  // };
-  // document.getElementById("special_thanks").onclick = function (e) {
-  //     e.preventDefault();
-  //     location.href = "/special_thanks";
-  // };
-  
+  document.getElementById("nature_photos").onclick = function (e) {
+      e.preventDefault();
+      location.href = "/photos_nature";
+  };
+  document.getElementById("aerial_photos").onclick = function (e) {
+      e.preventDefault();
+      location.href = "/photos_aerial";
+  };
+  document.getElementById("campus_photos").onclick = function (e) {
+      e.preventDefault();
+      location.href = "/photos_campus";
+  };
+  document.getElementById("oswald_photos").onclick = function (e) {
+      e.preventDefault();
+      location.href = "/photos_oswald";
+  };
+  document.getElementById("home").onclick = function (e) {
+    e.preventDefault();
+    location.href = "/";
+  }
+
 </script>
 
 </body>
