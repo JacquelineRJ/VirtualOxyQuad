@@ -8,7 +8,7 @@
   "description": "node app",
   "main": "index.ts",
   "scripts": {
-  "start": "node index.js"
+  "start": "./BOOK/index.js"
 },
   "repository": {
   "type": "git",
