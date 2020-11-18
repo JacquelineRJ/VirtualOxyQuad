@@ -116,6 +116,39 @@ body{
     background-color: #0b767e;
     color: white;
   }
+
+  .button2 {
+    margin-left: 200px; 
+    background-color: rgb(255, 239, 220);
+    color: #ffb17d; 
+    margin-top: 40px; 
+    font-size: 55px; 
+    font-weight: 100px;
+    font-family: Optima, sans-serif;
+    border-radius: 12px;
+  }
+  
+  .button2:hover {
+    background-color: #0b767e;
+    color: white;
+  }
+
+  .button3 {
+    margin-left: 200px; 
+    color: rgb(255, 239, 220);
+    background-color: #f18a45; 
+    margin-top: 40px; 
+    font-size: 55px; 
+    font-weight: 100px;
+    font-family: Optima, sans-serif;
+    border-radius: 12px;
+  }
+  
+  .button3:hover {
+    background-color: #0b767e;
+    color: white;
+  }
+
   
   /* FONTS */
   div.a {
