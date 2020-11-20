@@ -193,11 +193,11 @@ socket.on('send_chat_message_to_server', (msg) => {
 
 //Shows that user disconnected
 socket.on('disconnect', () => {
-   console.log('user disconnected');
+  console.log('user disconnected');
   //  socket.broadcast.emit('chat message', '***SOMEONE LEFT THE CHAT***');
-   let client_ids = Object.keys(io.engine.clients); // get ids (strings) of all current connections
-   socket.broadcast.emit('user_logged_off', 'User Disconnected'); // send to all users
-
+  let client_ids = Object.keys(io.engine.clients); // get ids (strings) of all current connections
+  socket.broadcast.emit('user_logged_off', 'User Disconnected'); // send to all users
+  console.log(Object.keys(io.engine.clients));
  });
 });
 
@@ -211,7 +211,7 @@ io.of("/login").on('connection', (socket) => {
 
 
 
-http.listen(process.env.PORT || 5000, () => {
+http.listen(5000, () => {
   console.log('listening on *:5000');
 });
  
