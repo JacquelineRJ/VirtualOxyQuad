@@ -125,77 +125,43 @@
   
   <div class="column side" style="color: transparent;">HI3</div>
 </div>
-<!-- STYLIZE ME -->
+
+
+<script type="text/javascript">
+
+  $("#pairmeup").on('click', function() {
+    socket.emit("pairplease");
+  });
+
+  $('#sendmsg').submit(function(e){
+    e.preventDefault(); // prevents page reloading
+    socket.emit('send_chat_message_to_server', $('#m').val());
+    $('#messages').append($('<div>').text("   " + $('#m').val()));
+    $('#m').val('');
+    return false;
+  });
+
+  
+  socket.on('get_chat_message_from_server', function(msg){
+    $('#messages').append($('<li>').text(msg["message"] ));
+      window.scrollTo(0, document.body.scrollHeight);
+  });
 
 
 
 
-    <!-- <div>
-      Users Online:
-      <ul id="online_users">
-        
-      </ul>
-    </div> -->
-
-    <!-- <style>
-      #chatarea.* { margin: 0; padding-top: 20px; box-sizing: border-box; }
-      #chatarea.body { font: 13px Helvetica, Arial; }
-      form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
-      form input { border: 0; padding: 10px; width: 90%; margin-right: 0.5%; }
-      form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
-      #messages { list-style-type: none; margin: 0; padding: 0; }
-      #messages li { padding: 5px 10px; }
-      #messages li:nth-child(odd) { background: #eee; }
-    </style> -->
 
 
-   <!--  <div id="chatarea" style="display: none;">
+  $("#sendusername").on('click', function() {
+    let username_str = $("#usrnameinput").val();
+    socket.emit("register_username", {
+      "name": username_str,
+      "hi" : "mom",
+      "number" : 3
+    });
+  });
 
-
-
-      <ul id="messages"></ul>
-      <form id="sendmsg" action="">
-        <input id="m" autocomplete="off" /><button>Send</button>
-      </form>
-
-
-    </div> -->
-
-    <script type="text/javascript">
-
-      $("#pairmeup").on('click', function() {
-        socket.emit("pairplease");
-      });
-
-      $('#sendmsg').submit(function(e){
-        e.preventDefault(); // prevents page reloading
-        socket.emit('send_chat_message_to_server', $('#m').val());
-        $('#messages').append($('<div>').text("   " + $('#m').val()));
-        $('#m').val('');
-        return false;
-      });
-
-      
-      socket.on('get_chat_message_from_server', function(msg){
-        $('#messages').append($('<li>').text(msg["message"] ));
-          window.scrollTo(0, document.body.scrollHeight);
-      });
- 
-
-
-   
-
-
-      $("#sendusername").on('click', function() {
-        let username_str = $("#usrnameinput").val();
-        socket.emit("register_username", {
-          "name": username_str,
-          "hi" : "mom",
-          "number" : 3
-        });
-      });
-
-    </script>
+</script>
 	
   </body>
 </html>

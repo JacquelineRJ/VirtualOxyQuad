@@ -12,7 +12,7 @@
 
 <div class="header">
   <img src="Occidental_College_Primary.png" style="float: left; height: 50px; margin-top: 2px;">
-  <button id="enter_chat" class="button button1" style="float:right;">Chat</button>
+  <!-- <button id="enter_chat" class="button button1" style="float:right;">Chat</button> -->
   <button id="photo_gallery" class="button button1" style="float:right;">Photo Gallery</button>      
   <button id="gatherTown_portal" class="button button1" style="margin-left: 8px;">GatherTown</button>
   
@@ -72,7 +72,8 @@
          Easy as 1, 2, 3
        </div>
      </div>
-     <button id="enter_chat2" class="button button3">←Enter</button>
+     <button class="button button3" style="font-size: 40px;">Coming Soon!</button>
+     <!-- <button id="enter_chat2" class="button button3">←Enter</button> -->
      <!-- <div class="other" >"INSTERT ABOUT QUAD SQUIRRELS? LOL"</div> -->
    </div>
  </div>
@@ -100,10 +101,10 @@
 
 
 <script type="text/javascript">
-    document.getElementById("enter_chat").onclick = function (e) {
-        e.preventDefault();
-        location.href = "/login";
-    };
+    // document.getElementById("enter_chat").onclick = function (e) {
+    //     e.preventDefault();
+    //     location.href = "/login";
+    // };
     document.getElementById("photo_gallery").onclick = function (e) {
         e.preventDefault();
         location.href = "/photos";
@@ -113,10 +114,10 @@
         location.href = "/gatherTown_portal";
     };
 
-    document.getElementById("enter_chat2").onclick = function (e) {
-        e.preventDefault();
-        location.href = "/login";
-    };
+    // document.getElementById("enter_chat2").onclick = function (e) {
+    //     e.preventDefault();
+    //     location.href = "/login";
+    // };
     document.getElementById("photo_gallery2").onclick = function (e) {
         e.preventDefault();
         location.href = "/photos";

@@ -21,26 +21,21 @@ var all_users = {};
 app.get('/', (req, res) => {
 	res.sendFile(__dirname + '/homePage.html');
 });
-
 // chat page
 app.get('/login', (req, res) => {
 	res.sendFile(__dirname + '/login.html');
  
 });
-
 app.get('/photos', (req, res) => {
   res.sendFile(__dirname + '/photos.html');
  
 });
-
 app.get("/gatherTown_portal", (req, res) => {
   res.sendFile(__dirname + '/gatherTown.html');
 });
-
 app.get("/photos_squirrels", (req, res) => {
   res.sendFile(__dirname + '/Squirrels.html');
 });
-
 app.get("/photos_nature", (req, res) => {
   res.sendFile(__dirname + '/nature.html');
 });
@@ -64,6 +59,7 @@ function get_users_and_statuses() {
     let client_id = client_ids[i];
     client_info[client_id] = {
       "isPaired": io.engine.clients[client_id].isPaired
+      // "user_nickame": io.engine.clients[client_id].user_name
     };
   }
   console.log(client_info);
@@ -78,20 +74,35 @@ function get_users_and_statuses() {
 
 io.on('connection', function(socket){
 
-
-  console.log('a user connected');
-  socket.broadcast.emit('chat message', `*** ${socket.id} JOINED THE CHAT***`);
-  // socket["isPaired"] = false;
-
-  io.engine.clients[socket.id]["isPaired"] = false;
+  socket.on('connect', () => {
+    console.log('a user connected');
+    console.log('object keys: ', Object.keys(io.engine.clients));
+    console.log('engine.clients: ', io.engine.clients);
+    console.log('clients[id]: ', io.engine.clients[id]);
+    console.log('socket.id: ', socket.id);
+    console.log('clients[id]: ' + io.engine.clients[id]);
+    io.engine.clients[socket.id]["isPaired"] = false;
+  })
+  
 
 
   socket.send(socket.id);
   socket.on("hi", (msg) => {
+    
   	console.log("the msg:", msg);
   });
 
-  // socket.on("check_name", (username) => {
+  socket.on("register_name", (username) => {
+    console.log('object keys: ', Object.keys(io.engine.clients));
+    console.log('engine.clients: ', io.engine.clients);
+    console.log('clients[socket.id]: ', io.engine.clients[socket]);
+    console.log('socket.id: ', socket.id);
+    io.engine.clients[socket.id]["user_nickname"] = username;
+    socket.emit("check_name_passed");
+    
+    
+  });
+ // socket.on("check_name", (username) => {
   //   if (!io.engine.clients.hasOwnProperty(username)) {
   //     io.engine.clients[socket.id]["user_nickname"] = username;
   //     //console.log(io.engine.clients[socket.id]);
@@ -103,11 +114,6 @@ io.on('connection', function(socket){
   //   }
   // });
 
-  // onlyfans
-  socket.on("register_name", (username) => {
-    io.engine.clients[socket.id]["user_nickname"] = username;
-    socket.emit("check_name_passed");
-  });
 
 //pair button
   socket.on("pairplease", (msg) => {
@@ -197,8 +203,8 @@ socket.on('disconnect', () => {
   console.log('user disconnected');
   //  socket.broadcast.emit('chat message', '***SOMEONE LEFT THE CHAT***');
   let client_ids = Object.keys(io.engine.clients); // get ids (strings) of all current connections
-  socket.broadcast.emit('user_logged_off', 'User Disconnected'); // send to all users
-  console.log(Object.keys(io.engine.clients));
+  // socket.broadcast.emit('user_logged_off', 'User Disconnected'); // send to all users
+  
  });
 });
 

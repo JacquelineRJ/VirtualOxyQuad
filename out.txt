@@ -1,0 +1,215 @@
+listening on 5000
+{
+  P5SPACGcMO0sOiW3AAAA: { isPaired: undefined },
+  VkuNf3D_xRfXANqnAAAB: { isPaired: undefined }
+}
+{
+  P5SPACGcMO0sOiW3AAAA: { isPaired: undefined },
+  VkuNf3D_xRfXANqnAAAB: { isPaired: undefined }
+}
+the msg: this is other info
+object keys:  [ 'P5SPACGcMO0sOiW3AAAA', 'VkuNf3D_xRfXANqnAAAB' ]
+engine.clients:  <ref *1> {
+  P5SPACGcMO0sOiW3AAAA: Socket {
+    _events: [Object: null prototype] {
+      close: [Array],
+      data: [Function: bound ondata],
+      error: [Function: bound onerror]
+    },
+    _eventsCount: 3,
+    _maxListeners: undefined,
+    id: 'P5SPACGcMO0sOiW3AAAA',
+    server: Server {
+      _events: [Object: null prototype],
+      _eventsCount: 1,
+      _maxListeners: undefined,
+      clients: [Circular *1],
+      clientsCount: 2,
+      opts: [Object],
+      ws: [WebSocketServer],
+      [Symbol(kCapture)]: false
+    },
+    upgrading: false,
+    upgraded: true,
+    readyState: 'open',
+    writeBuffer: [],
+    packetsFn: [],
+    sentCallbackFn: [],
+    cleanupFn: [ [Function (anonymous)], [Function (anonymous)] ],
+    request: IncomingMessage {
+      _readableState: [ReadableState],
+      _events: [Object: null prototype],
+      _eventsCount: 1,
+      _maxListeners: undefined,
+      socket: [Socket],
+      httpVersionMajor: 1,
+      httpVersionMinor: 1,
+      httpVersion: '1.1',
+      complete: true,
+      headers: [Object],
+      rawHeaders: [Array],
+      trailers: {},
+      rawTrailers: [],
+      aborted: false,
+      upgrade: false,
+      url: '/socket.io/?EIO=4&transport=polling&t=NNvskvt',
+      method: 'GET',
+      statusCode: null,
+      statusMessage: null,
+      client: [Socket],
+      _consuming: false,
+      _dumped: true,
+      _query: [Object: null prototype],
+      res: [ServerResponse],
+      cleanup: [Function: cleanup],
+      [Symbol(kCapture)]: false,
+      [Symbol(RequestTimeout)]: undefined
+    },
+    remoteAddress: '::1',
+    checkIntervalTimer: null,
+    upgradeTimeoutTimer: null,
+    pingTimeoutTimer: Timeout {
+      _idleTimeout: 30000,
+      _idlePrev: [TimersList],
+      _idleNext: [TimersList],
+      _idleStart: 4712,
+      _onTimeout: [Function (anonymous)],
+      _timerArgs: undefined,
+      _repeat: null,
+      _destroyed: false,
+      [Symbol(refed)]: true,
+      [Symbol(kHasPrimitive)]: false,
+      [Symbol(asyncId)]: 155,
+      [Symbol(triggerId)]: 116
+    },
+    pingIntervalTimer: Timeout {
+      _idleTimeout: 25000,
+      _idlePrev: [TimersList],
+      _idleNext: [Timeout],
+      _idleStart: 4710,
+      _onTimeout: [Function (anonymous)],
+      _timerArgs: undefined,
+      _repeat: null,
+      _destroyed: false,
+      [Symbol(refed)]: true,
+      [Symbol(kHasPrimitive)]: false,
+      [Symbol(asyncId)]: 152,
+      [Symbol(triggerId)]: 116
+    },
+    transport: WebSocket {
+      _events: [Object: null prototype],
+      _eventsCount: 4,
+      _maxListeners: undefined,
+      readyState: 'open',
+      discarded: false,
+      socket: [WebSocket],
+      writable: true,
+      perMessageDeflate: undefined,
+      supportsBinary: true,
+      [Symbol(kCapture)]: false
+    },
+    [Symbol(kCapture)]: false
+  },
+  VkuNf3D_xRfXANqnAAAB: Socket {
+    _events: [Object: null prototype] {
+      close: [Array],
+      data: [Function: bound ondata],
+      error: [Function: bound onerror]
+    },
+    _eventsCount: 3,
+    _maxListeners: undefined,
+    vfffdffffrerrreeedc
+    server: Server {
+      _events: [Object: null prototype],
+      _eventsCount: 1,
+      _maxListeners: undefined,
+      clients: [Circular *1],
+      clientsCount: 2,
+      opts: [Object],
+      ws: [WebSocketServer],
+      [Symbol(kCapture)]: false
+    },
+    upgrading: false,
+    upgraded: true,
+    readyState: 'open',
+    writeBuffer: [],
+    packetsFn: [],
+    sentCallbackFn: [],
+    cleanupFn: [ [Function (anonymous)], [Function (anonymous)] ],
+    request: IncomingMessage {
+      _readableState: [ReadableState],
+      _events: [Object: null prototype],
+      _eventsCount: 1,
+      _maxListeners: undefined,
+      socket: [Socket],
+      httpVersionMajor: 1,
+      httpVersionMinor: 1,
+      httpVersion: '1.1',
+      complete: true,
+      headers: [Object],
+      rawHeaders: [Array],
+      trailers: {},
+      rawTrailers: [],
+      aborted: false,
+      upgrade: false,
+      url: '/socket.io/?EIO=4&transport=polling&t=NNvskxE',
+      method: 'GET',
+      statusCode: null,
+      statusMessage: null,
+      client: [Socket],
+      _consuming: false,
+      _dumped: true,
+      _query: [Object: null prototype],
+      res: [ServerResponse],
+      cleanup: [Function: cleanup],
+      [Symbol(kCapture)]: false,
+      [Symbol(RequestTimeout)]: undefined
+    },
+    remoteAddress: '::1',
+    checkIntervalTimer: null,
+    upgradeTimeoutTimer: null,
+    pingTimeoutTimer: Timeout {
+      _idleTimeout: -1,
+      _idlePrev: null,
+      _idleNext: null,
+      _idleStart: 3498,
+      _onTimeout: null,
+      _timerArgs: undefined,
+      _repeat: null,
+      _destroyed: true,
+      [Symbol(refed)]: true,
+      [Symbol(kHasPrimitive)]: false,
+      [Symbol(asyncId)]: 74,
+      [Symbol(triggerId)]: 73
+    },
+    pingIntervalTimer: Timeout {
+      _idleTimeout: 25000,
+      _idlePrev: [Timeout],
+      _idleNext: [TimersList],
+      _idleStart: 3510,
+      _onTimeout: [Function (anonymous)],
+      _timerArgs: undefined,
+      _repeat: null,
+      _destroyed: false,
+      [Symbol(refed)]: true,
+      [Symbol(kHasPrimitive)]: false,
+      [Symbol(asyncId)]: 103,
+      [Symbol(triggerId)]: 80
+    },
+    transport: WebSocket {
+      _events: [Object: null prototype],
+      _eventsCount: 4,
+      _maxListeners: undefined,
+      readyState: 'open',
+      discarded: false,
+      socket: [WebSocket],
+      writable: true,
+      perMessageDeflate: undefined,
+      supportsBinary: true,
+      [Symbol(kCapture)]: false
+    },
+    [Symbol(kCapture)]: false
+  }
+}
+clients[socket.id]:  undefined
+socket.id:  SKukICFVVp8XILX2AAAD
